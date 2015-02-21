@@ -6,13 +6,18 @@
 makeCacheMatrix <- function(x = matrix()) {
   # setters
   m <- NULL
-  set <- function(){
+  set <- function(y){
     x <<- y
     m <<- NULL
   }
   
-  # getters ?
-  get <- function()x
+  # getters
+  get <- function() x
+  setm <- function(solve) m <<- solve
+  getm <- function() m
+  list(set = set, get = get,
+       setm = setm,
+       getm = getm)
 }
 
 
